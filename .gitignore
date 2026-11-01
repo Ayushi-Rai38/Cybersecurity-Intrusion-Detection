@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+env/
+
+# Spark
+derby.log
+metastore_db/
+spark-warehouse/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Outputs (generated — do not commit large files)
+outputs/predictions.csv
+outputs/confusion_matrix.csv
+models/
+
+# Dataset (large files — do not commit to git)
+# data/   ← keep CSVs locally, exclude from repo
+
+# Logs
+training_run.log
+*.log
+
+# Node
+frontend/node_modules/
+frontend/dist/
+

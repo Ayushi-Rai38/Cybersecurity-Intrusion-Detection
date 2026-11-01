@@ -1,0 +1,17 @@
+{
+  "accuracy": 0.903294,
+  "attack_precision": 0.870367,
+  "attack_recall": 0.968631,
+  "attack_f1": 0.916874,
+  "roc_auc": 0.979265,
+  "confusion_matrix": {
+    "TN": 30460,
+    "FP": 6540,
+    "FN": 1422,
+    "TP": 43910
+  },
+  "class_distribution": {
+    "training_normal": 56000,
+    "training_attack": 119341
+  }
+}
