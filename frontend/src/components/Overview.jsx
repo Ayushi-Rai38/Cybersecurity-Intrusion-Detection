@@ -50,7 +50,7 @@ export default function Overview({ filters }) {
   const { data: cats }                = useFetch(api.attackCategories)
 
   if (lk || lm) return <div className={s.loading}>Loading dashboard data…</div>
-  if (!kpis)    return <div className={s.error}>API not reachable. Start the Flask server: <code>python api.py</code></div>
+  if (!kpis)    return <div className={s.error}>API not reachable. Start the FastAPI server: <code>python api.py</code></div>
 
   const alertColor = kpis.alert_rate_pct > 40 ? C.red : C.green
 
@@ -137,10 +137,10 @@ export default function Overview({ filters }) {
             <span className={s.sectionDot}/> Top Attack Categories
           </div>
           <ResponsiveContainer width="100%" height={200}>
-            <BarChart data={(cats ?? []).slice(0,8)} layout="vertical" margin={{ left:10, right:30 }}>
+            <BarChart data={(cats?.categories ?? []).slice(0,8)} layout="vertical" margin={{ left:10, right:30 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#21262d" horizontal={false} />
               <XAxis type="number" tick={{ fill:'#8b949e', fontSize:10 }} axisLine={false} tickLine={false} />
-              <YAxis type="category" dataKey="category" tick={{ fill:'#e6edf3', fontSize:10 }} axisLine={false} tickLine={false} width={80} />
+              <YAxis type="category" dataKey="attack_cat" tick={{ fill:'#e6edf3', fontSize:10 }} axisLine={false} tickLine={false} width={80} />
               <Tooltip contentStyle={{ background:'#1c2230', border:'1px solid #30363d', borderRadius:8, fontSize:12 }} />
               <Bar dataKey="count" fill={C.blue} radius={[0,5,5,0]} />
             </BarChart>

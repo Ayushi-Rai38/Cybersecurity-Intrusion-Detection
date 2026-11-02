@@ -65,7 +65,7 @@ export default function Sidebar({ filters, setFilters }) {
       )}
 
       <div className={styles.footer}>
-        PySpark MLlib 4.x · Python 3.12 · Flask API
+        PySpark MLlib 4.x · Python 3.12 · FastAPI
       </div>
     </aside>
   )

@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Shield, LayoutDashboard, AlertTriangle, Target, Layers, Radio } from 'lucide-react'
-import Sidebar   from './components/Sidebar.jsx'
-import Overview  from './components/Overview.jsx'
-import Alerts    from './components/Alerts.jsx'
-import Evaluation from './components/Evaluation.jsx'
-import Categories from './components/Categories.jsx'
-import Traffic   from './components/Traffic.jsx'
+import { Shield, LayoutDashboard, AlertTriangle, Target, Layers, Radio, Zap } from 'lucide-react'
+import Sidebar     from './components/Sidebar.jsx'
+import Overview    from './components/Overview.jsx'
+import Alerts      from './components/Alerts.jsx'
+import Evaluation  from './components/Evaluation.jsx'
+import Categories  from './components/Categories.jsx'
+import Traffic     from './components/Traffic.jsx'
+import Predict     from './components/Predict.jsx'
 import StatusBanner from './components/StatusBanner.jsx'
 import styles from './App.module.css'
 
@@ -15,6 +16,7 @@ const TABS = [
   { id: 'evaluation',  label: 'Evaluation',  icon: Target          },
   { id: 'categories',  label: 'Categories',  icon: Layers          },
   { id: 'traffic',     label: 'Traffic',     icon: Radio           },
+  { id: 'predict',     label: 'Predict',     icon: Zap             },
 ]
 
 export default function App() {
@@ -54,11 +56,12 @@ export default function App() {
 
         {/* Page content */}
         <div className={styles.content}>
-          {activeTab === 'overview'   && <Overview   filters={filters} />}
-          {activeTab === 'alerts'     && <Alerts     filters={filters} />}
-          {activeTab === 'evaluation' && <Evaluation />}
-          {activeTab === 'categories' && <Categories />}
-          {activeTab === 'traffic'    && <Traffic    />}
+          {activeTab === 'overview'    && <Overview    filters={filters} />}
+          {activeTab === 'alerts'      && <Alerts      filters={filters} />}
+          {activeTab === 'evaluation'  && <Evaluation />}
+          {activeTab === 'categories'  && <Categories />}
+          {activeTab === 'traffic'     && <Traffic    />}
+          {activeTab === 'predict'     && <Predict    />}
         </div>
 
         <footer className={styles.footer}>
